@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	background: url(https://torange.biz/photo/44/HD/night-new-photos-dark-sky-stars-44700.jpg) top center #000;
+	height: 100%;
+	overflow-x: hidden;
+
+	&::-webkit-scrollbar {
+		width: 5px;
+		height: 5px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #fff;
+		border-radius: 10px;
+
+		&:hover {
+			background: #b5b7b7;
+		}
+	}
+}
+
+#root {
+	height: 100%;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+li {
+	list-style: none;
+}
+
+%lightsaber {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+		width: 20%;
+		height: 1px;
+		border-radius: 10px;
+		background-color: #b5b7b7;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 20%;
+		bottom: -2px;
+		width: 10%;
+		height: 2px;
+		background-color: #fff;
+		border-radius: 4px;
+		box-shadow: 0px 0px 4px 1px #fade4b;
+		transition: all 0.25s;
+	}
+
+	&:hover {
+		&::after {
+			width: 80%;
+		}
+	}
+}
+
+%style-card {
+}
+
+%adaptive-img {
+	position: relative;
+	padding: 0px 0px 40% 0px;
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+.wrapper {
+	height: 100%;
+	font-size: 16px;
+	font-family: "Roboto", sans-serif;
+	color: #fff;
+	font-weight: 400;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 1000px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding-top: 20px;
+}
+
+.logo {
+	width: 200px;
+	cursor: pointer;
+}
+
+.menu {
+	font-size: 24px;
+	align-self: start;
+	color: #b5b7b7;
+	border-bottom: 1px solid #48494a;
+	width: 100%;
+
+	&__items {
+		display: flex;
+		gap: 5px;
+		margin-bottom: 5px;
+	}
+
+	&__item {
+		display: flex;
+		gap: 5px;
+		cursor: pointer;
+		white-space: nowrap;
+		position: relative;
+		transition: color 0.3s ease 0s;
+
+		&:not(:last-child) {
+			&::after {
+				content: "/";
+			}
+		}
+
+		&:last-child {
+			@extend %lightsaber;
+
+			color: #fff;
+
+			&::after {
+				width: 80%;
+			}
+		}
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+.main {
+}
+
+.menu-categories {
+}
+
+.menu-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	justify-content: center;
+	gap: 20px;
+}
+
+.menu-card {
+	display: grid;
+	grid-template: auto 1fr / minmax(310px, auto);
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+
+	&:hover {
+		.menu-card__title {
+			&::after {
+				width: 80%;
+			}
+		}
+	}
+
+	&__img {
+		@extend %adaptive-img;
+	}
+
+	&__footer {
+		padding: 15px;
+		background-color: #1d1e1f;
+	}
+
+	&__title {
+		font-size: 24px;
+		display: inline-block;
+		@extend %lightsaber;
+	}
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin-top: auto;
+	padding-bottom: 20px;
+
+	&__copyright {
+		display: flex;
+		align-self: center;
+		gap: 5px;
+		font-size: 14px;
+
+		a {
+			@extend %lightsaber;
+		}
+	}
+
+	&__main-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 30px;
+	}
+}
+
+.follow {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	&__title {
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+	&__link {
+		@extend %lightsaber;
+
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		transition: all 0.25s;
+
+		i {
+			font-size: 24px;
+		}
+
+		span {
+			font-size: 16px;
+		}
+	}
+}
+
+.developer {
+	display: flex;
+	gap: 5px;
+	font-size: 16px;
+
+	a {
+		@extend %lightsaber;
+	}
+}
