@@ -1,14 +1,13 @@
 import { initialAPIs } from "../initialAPIs";
-import MenuCard from "./MenuCard";
+import MenuCard from "../components/MenuCard";
 
-const MenuCards = () => {
+
+export const HomeMenu = () => {
   return (
-    <div className="menu-cards">
+    <div className="home-menu">
       {
         initialAPIs.map(api => <MenuCard data={api} />)
       }
     </div>
   );
 };
-
-export default MenuCards;

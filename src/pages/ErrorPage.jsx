@@ -1,5 +1,4 @@
 import '../styles/components/errorPage.scss';
-import React from 'react';
 
 export const ErrorPage = ({ status, url }) => {
 	return (
