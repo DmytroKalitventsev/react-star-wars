@@ -1,15 +1,17 @@
+import { Link } from "react-router-dom";
+
 const MenuCard = ({ data }) => {
-  const {title, api} = data;
+  const { name } = data;
 
   return (
-    <a className="menu-card" href='#'>
+    <Link to={`/${name}`} className="menu-card">
       <div className="menu-card__img">
-        <img src={`img/categories/${title}.jpg`} alt="card" />
+        <img src={`img/categories/${name}.jpg`} alt={name} />
       </div>
       <div className="menu-card__footer">
-        <h2 className="menu-card__title">{title}</h2>
+        <h2 className="menu-card__title">{name}</h2>
       </div>
-    </a>
+    </Link>
   );
 };
 

@@ -63,7 +63,7 @@ li {
     position: absolute;
     left: 0;
     bottom: -2px;
-    width: 20%;
+    width: 10%;
     height: 1px;
     border-radius: 10px;
     background-color: #b5b7b7;
@@ -72,35 +72,34 @@ li {
   &::after {
     content: "";
     position: absolute;
-    left: 20%;
+    left: 10%;
     bottom: -2px;
     width: 10%;
     height: 2px;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0px 0px 4px 1px #fade4b;
-    transition: all 0.25s;
+    transition: all 0.5s;
   }
 
   &:hover {
     &::after {
-      width: 80%;
+      width: 90%;
     }
   }
-}
-
-%style-card {
 }
 
 %adaptive-img {
   position: relative;
   padding: 0px 0px 40% 0px;
+  overflow: hidden;
 
   img {
     position: absolute;
     top: 0;
     left: 0;
     object-fit: cover;
+    object-position: center;
   }
 }
 
@@ -116,10 +115,8 @@ li {
 
 .header {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   padding-top: 20px;
 }
 
@@ -148,6 +145,7 @@ li {
     white-space: nowrap;
     position: relative;
     transition: color 0.3s ease 0s;
+    text-transform: capitalize;
 
     &:not(:last-child) {
       &::after {
@@ -172,6 +170,9 @@ li {
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .home-menu {
@@ -183,7 +184,7 @@ li {
 
 .menu-card {
   display: grid;
-  grid-template: auto 1fr / minmax(310px, auto);
+  grid-template: auto 1fr / 1fr;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -209,7 +210,50 @@ li {
   &__title {
     font-size: 24px;
     display: inline-block;
+    width: 100%;
     @extend %lightsaber;
+  }
+}
+
+.category-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  justify-content: center;
+  gap: 20px;
+}
+
+.category-item {
+  display: grid;
+  grid-template: auto 1fr / 1fr;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  text-transform: capitalize;
+
+  &:hover {
+    .category-item__title {
+      &::after {
+        width: 80%;
+      }
+    }
+  }
+
+  &__img {
+    @extend %adaptive-img;
+    padding: 0px 0px 100% 0px;
+  }
+
+  &__footer {
+    padding: 15px;
+    background-color: #1d1e1f;
+  }
+
+  &__title {
+    @extend %lightsaber;
+    font-size: 16px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
   }
 }
 
