@@ -6,11 +6,11 @@ export const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-content">
-          
+
           <Logo />
 
           <Navigation />
-          
+
         </div>
       </div>
     </header>

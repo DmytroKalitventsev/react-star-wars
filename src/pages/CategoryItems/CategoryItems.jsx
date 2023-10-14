@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useFetch from "../../utils/hooks/useFetch";
 import Loading from "../../utils/hoc/Loading";
 import { baseAPI } from "../../utils/APIs/baseAPI";
-import { CategoryItem } from "../../components";
+import { CategoryItem, Pagination } from "../../components";
 import './categoryItems.scss';
 
 export const CategoryItems = () => {
@@ -11,8 +11,8 @@ export const CategoryItems = () => {
   const { data, loading, isValidApi } = useFetch(`${baseAPI}/${linkAddress}/`);
 
   return (
-    <div className="category-items">
-      <Loading data={loading}>
+    <Loading data={loading}>
+      <div className="category-items">
         {
           data.results?.map(item =>
             <CategoryItem
@@ -22,7 +22,8 @@ export const CategoryItems = () => {
             />
           )
         }
-      </Loading>
-    </div>
+      </div>
+      <Pagination />
+    </Loading>
   );
 };

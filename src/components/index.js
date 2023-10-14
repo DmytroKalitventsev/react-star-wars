@@ -6,3 +6,4 @@ export * from './FollowMe/FollowMe';
 export * from './AboutDeveloper/AboutDeveloper';
 export * from './Copyright/Copyright';
 export * from './Logo/Logo';
+export * from './Pagination/Pagination';
