@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import useImg from '../hooks/useImg';
+import useImg from '../../utils/hooks/useImg';
+import { imageAPI } from '../../APIs/imageAPI';
 
-const CategoryItem = ({ data, category }) => {
+export const CategoryItem = ({ data, category }) => {
   const { name, title, url } = data;
   const idItem = url.match(/\/(\d+)\/$/)[1];
-  const {isValidSrc, isError, setIsError} = useImg(`https://starwars-visualguide.com/assets/img/${category}/${idItem}.jpg`);
+  const {isValidSrc, isError, setIsError} = useImg(`${imageAPI}/${category}/${idItem}.jpg`);
   const titleText = name ? name : title;
 
   return (
@@ -22,5 +23,3 @@ const CategoryItem = ({ data, category }) => {
     </Link>
   );
 };
-
-export default CategoryItem;

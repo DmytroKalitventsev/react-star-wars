@@ -1,0 +1,1 @@
+export const baseAPI = 'https://swapi.dev/api';

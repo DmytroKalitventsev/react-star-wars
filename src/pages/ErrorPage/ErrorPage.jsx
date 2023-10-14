@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../styles/components/errorPage.scss';
+import './errorPage.scss';
 
 export const ErrorPage = ({ status, url }) => {
   return (
@@ -15,7 +15,9 @@ export const ErrorPage = ({ status, url }) => {
         <span className="error-page__text-url">The requested URL {url} was not found on this server. </span>
         <span className="error-page__text-url error-page_silver-text">That's all we know.</span>
       </div>
+
       <Link to='/' className="error-page__return-home">Return to Home</Link>
+      
     </div>
   );
 };

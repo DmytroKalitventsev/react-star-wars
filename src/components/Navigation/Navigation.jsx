@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 
-const Navigation = () => {
+export const Navigation = () => {
   const { category } = useParams();
   
   return (
@@ -21,5 +21,3 @@ const Navigation = () => {
     </nav>
   );
 };
-
-export default Navigation;

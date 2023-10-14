@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Navigation from "./Navigation";
+import { Navigation } from "../../components";
 
-const Main = () => {
+export const Main = () => {
   return (
     <div className="main">
 
@@ -12,5 +12,3 @@ const Main = () => {
     </div>
   );
 };
-
-export default Main;

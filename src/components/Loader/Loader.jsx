@@ -1,6 +1,6 @@
-import '../styles/components/loader.scss';
+import './loader.scss';
 
-const Loader = () => {
+export const Loader = () => {
   return (
     <span className="loader_wrapper">
       <svg viewBox="-50 -50 700 700" className="loader" xmlns="http://www.w3.org/2000/svg" svg="http://www.w3.org/2000/svg">
@@ -15,5 +15,3 @@ const Loader = () => {
     </span>
   );
 };
-
-export default Loader;

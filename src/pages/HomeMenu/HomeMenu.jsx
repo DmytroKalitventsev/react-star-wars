@@ -1,5 +1,5 @@
-import { initialAPIs } from "../initialAPIs";
-import MenuCard from "../components/MenuCard";
+import { initialAPIs } from "../../APIs/categoryAPIs";
+import { MenuCard } from "../../components";
 
 export const HomeMenu = () => {
   return (

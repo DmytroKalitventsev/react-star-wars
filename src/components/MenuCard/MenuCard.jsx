@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const MenuCard = ({ data }) => {
+export const MenuCard = ({ data }) => {
   const { name } = data;
 
   return (
@@ -14,5 +14,3 @@ const MenuCard = ({ data }) => {
     </Link>
   );
 };
-
-export default MenuCard;
