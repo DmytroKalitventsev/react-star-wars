@@ -16,7 +16,7 @@ export const ErrorPage = ({ status, url }) => {
         <span className="error-page__text-url error-page_silver-text">That's all we know.</span>
       </div>
 
-      <Link to='/' className="error-page__return-home">Return to Home</Link>
+      <Link to='/' className="error-page__return-home lightsaber">Return to Home</Link>
       
     </div>
   );

@@ -1,8 +1,17 @@
+import { Logo, Navigation } from "../../components";
+import './header.scss';
+
 export const Header = () => {
   return (
     <header className="header">
-      <div className="logo">
-        <img src="img/logo.png" alt="logo" />
+      <div className="container">
+        <div className="header-content">
+          
+          <Logo />
+
+          <Navigation />
+          
+        </div>
       </div>
     </header>
   );

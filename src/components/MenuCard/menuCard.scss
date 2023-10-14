@@ -1,0 +1,30 @@
+.menu-card {
+  display: grid;
+  grid-template: auto 1fr / 1fr;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  text-transform: capitalize;
+
+  &:hover {
+    .menu-card__title {
+      &::after {
+        width: 80%;
+      }
+    }
+  }
+
+  &__img {
+  }
+
+  &__footer {
+    padding: 15px;
+    background-color: #1d1e1f;
+  }
+
+  &__title {
+    font-size: 24px;
+    display: inline-block;
+    width: 100%;
+  }
+}

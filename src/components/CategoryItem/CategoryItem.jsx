@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import useImg from '../../utils/hooks/useImg';
-import { imageAPI } from '../../APIs/imageAPI';
+import { imageAPI } from '../../utils/APIs/imageAPI';
+import './categoryItem.scss';
 
 export const CategoryItem = ({ data, category }) => {
   const { name, title, url } = data;
@@ -10,7 +11,7 @@ export const CategoryItem = ({ data, category }) => {
 
   return (
     <Link to={`/${titleText}`} className="category-item">
-      <div className="category-item__img">
+      <div className="category-item__img adaptive-img">
         <img
           src={isValidSrc}
           alt={titleText}
@@ -18,7 +19,7 @@ export const CategoryItem = ({ data, category }) => {
         />
       </div>
       <div className="category-item__footer">
-        <h2 className="category-item__title">{titleText}</h2>
+        <h2 className="category-item__title lightsaber">{titleText}</h2>
       </div>
     </Link>
   );

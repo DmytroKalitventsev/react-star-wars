@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import './navigation.scss';
 
 export const Navigation = () => {
   const { category } = useParams();

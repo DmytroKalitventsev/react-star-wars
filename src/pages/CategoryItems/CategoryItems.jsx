@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../../utils/hooks/useFetch";
 import Loading from "../../utils/hoc/Loading";
-import { baseAPI } from "../../APIs/baseAPI";
+import { baseAPI } from "../../utils/APIs/baseAPI";
 import { CategoryItem } from "../../components";
+import './categoryItems.scss';
 
 export const CategoryItems = () => {
   const { category } = useParams();
