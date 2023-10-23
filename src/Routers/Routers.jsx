@@ -1,9 +1,9 @@
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, HashRouter } from "react-router-dom";
 import { CategoryItems, HomeMenu, ErrorPage, InitialPage, AboutCharacter, AboutPlanet, AboutFilm, AboutSpecie, AboutVehicle, AboutStarship } from "../pages";
 
 const Routers = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path='/' element={<InitialPage />}>
           <Route index element={<HomeMenu />} />
@@ -17,7 +17,7 @@ const Routers = () => {
         </Route>
         <Route path='*' element={<ErrorPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
