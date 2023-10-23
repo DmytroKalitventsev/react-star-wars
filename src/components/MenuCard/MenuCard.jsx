@@ -5,7 +5,7 @@ export const MenuCard = ({ data }) => {
   const { name } = data;
 
   return (
-    <Link to={`/${name}`} className="menu-card">
+    <Link to={`/${name}`} className="menu-card" state={{category: name}}>
       <div className="menu-card__img adaptive-img">
         <img src={`img/categories/${name}.jpg`} alt={name} />
       </div>

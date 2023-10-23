@@ -1,5 +1,10 @@
 .error-page {
   display: flex;
+  height: 100%;
+}
+
+.error-content {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -7,12 +12,8 @@
   color: #e3e3e3;
   height: 100%;
 
-  &_silver-text {
+  .silver-text {
     color: #6b6b6b;
-  }
-
-  &__logo {
-    max-width: 200px;
   }
 
   &__status {
@@ -31,5 +32,6 @@
 
   &__return-home {
     font-size: 30px;
+    cursor: pointer;
   }
 }

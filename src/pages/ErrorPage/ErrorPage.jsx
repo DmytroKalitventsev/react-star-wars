@@ -1,23 +1,37 @@
-import { Link } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './errorPage.scss';
+import { Logo } from '../../components';
 
-export const ErrorPage = ({ status, url }) => {
+export const ErrorPage = () => {
+  const { '*': address } = useParams();
+  const navigate = useNavigate();
+
+  const turnBack = () => navigate(-1);
+
   return (
     <div className='error-page'>
-      <div className='error-page__logo'>
-        <img src='img/logo.png' alt="logo" />
-      </div>
-      <div className='error-page__status'>
-        <span className='error-page__text-status'>{status}. </span>
-        <span className='error-page__text-status error-page_silver-text'>That's an error.</span>
-      </div>
-      <div className="error-page__url">
-        <span className="error-page__text-url">The requested URL {url} was not found on this server. </span>
-        <span className="error-page__text-url error-page_silver-text">That's all we know.</span>
+      <div className='container'>
+        <div className='error-content'>
+
+          <Logo />
+          
+          <div className='error-content__status'>
+            <span className='error-content__text-status'>404. </span>
+            <span className='error-content__text-status silver-text'>That's an error.</span>
+          </div>
+          <div className="error-content__url">
+            <span className="error-content__text-url">
+              The requested URL
+              <span className='error-content__text-url silver-text'> https://{address} </span>
+              was not found on this server.
+            </span>
+            <span className="error-content__text-url silver-text"> That's all we know.</span>
+          </div>
+
+          <div onClick={turnBack} className="error-content__return-home lightsaber">Turn Back</div>
+        </div>
       </div>
 
-      <Link to='/' className="error-page__return-home lightsaber">Return to Home</Link>
-      
     </div>
   );
 };

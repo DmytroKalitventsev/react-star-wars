@@ -6,11 +6,11 @@ import './categoryItem.scss';
 export const CategoryItem = ({ data, category }) => {
   const { name, title, url } = data;
   const idItem = url.match(/\/(\d+)\/$/)[1];
-  const {isValidSrc, isError, setIsError} = useImg(`${imageAPI}/${category}/${idItem}.jpg`);
+  const { isValidSrc, isError, setIsError } = useImg(`${imageAPI}/${category}/${idItem}.jpg`);
   const titleText = name ? name : title;
 
   return (
-    <Link to={`/${titleText}`} className="category-item">
+    <Link to={`${titleText.toLowerCase().replace(/\s/g, '-')}`} className="category-item" state={{ idItem, category, titleText }}>
       <div className="category-item__img adaptive-img">
         <img
           src={isValidSrc}

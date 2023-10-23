@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import './logo.scss';
 
 export const Logo = () => {
   return (
-    <div className="logo">
-      <img src="img/logo.png" alt="logo" />
-    </div>
+    <Link to='/' className="logo">
+      <img src="/img/logo.png" alt="logo" />
+    </Link>
   );
 };

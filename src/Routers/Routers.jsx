@@ -1,5 +1,5 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { CategoryItems, HomeMenu, DescriptionItem, ErrorPage, InitialPage } from "../pages";
+import { CategoryItems, HomeMenu, ErrorPage, InitialPage, AboutCharacter, AboutPlanet, AboutFilm, AboutSpecie, AboutVehicle, AboutStarship } from "../pages";
 
 const Routers = () => {
   return (
@@ -8,7 +8,12 @@ const Routers = () => {
         <Route path='/' element={<InitialPage />}>
           <Route index element={<HomeMenu />} />
           <Route path=':category' element={<CategoryItems />} />
-          <Route path=':description' element={<DescriptionItem />} />
+          <Route path="characters/:slug" element={<AboutCharacter />} />
+          <Route path="planets/:slug" element={<AboutPlanet />} />
+          <Route path="films/:slug" element={<AboutFilm />} />
+          <Route path="species/:slug" element={<AboutSpecie />} />
+          <Route path="vehicles/:slug" element={<AboutVehicle />} />
+          <Route path="starships/:slug" element={<AboutStarship />} />
         </Route>
         <Route path='*' element={<ErrorPage />} />
       </Routes>
