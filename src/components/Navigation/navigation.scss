@@ -5,10 +5,24 @@
   border-bottom: 1px solid #48494a;
   width: 100%;
 
+  @media (max-width: 600px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 18px;
+  }
+
   &__items {
     display: flex;
     gap: 5px;
     margin-bottom: 5px;
+
+    @media (max-width: 450px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
   }
 
   &__item {
@@ -27,6 +41,10 @@
     &:not(:last-child) {
       &::after {
         content: "/";
+
+        @media (max-width: 450px) {
+          content: "";
+        }
       }
     }
 
