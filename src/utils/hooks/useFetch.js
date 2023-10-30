@@ -18,7 +18,7 @@ const useFetch = (api) => {
           setIsValidApi({ ...isValidApi, ok, status, url });
           throw new Error(`API returned a status code of ${status}`);
         }
-        
+
         return res.json();
       })
       .then(data => {

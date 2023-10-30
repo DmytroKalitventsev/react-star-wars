@@ -14,7 +14,7 @@ export const ErrorPage = () => {
         <div className='error-content'>
 
           <Logo />
-          
+
           <div className='error-content__status'>
             <span className='error-content__text-status'>404. </span>
             <span className='error-content__text-status silver-text'>That's an error.</span>

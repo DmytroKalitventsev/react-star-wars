@@ -1,1 +1,88 @@
-// hekki
+.about-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item-characteristics {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &__img {
+    padding: 0px 0px 100% 0px;
+  }
+}
+
+.characteristics-points {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px 15px 15px 20px;
+  background-color: #1d1e1f;
+
+  &__name {
+    font-size: 20px;
+  }
+}
+
+.characteristics-point {
+  display: flex;
+  gap: 5px;
+  text-transform: capitalize;
+
+  &__title {
+  }
+
+  &__info {
+  }
+}
+
+.items-related {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #1d1e1f;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+  }
+
+  &__item-title {
+    font-size: 16px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.item-related {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  max-width: 100px;
+  cursor: pointer;
+
+  &__img {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__name {
+    text-align: center;
+    font-size: 14px;
+  }
+}
