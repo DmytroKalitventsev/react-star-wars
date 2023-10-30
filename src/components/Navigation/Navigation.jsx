@@ -4,7 +4,9 @@ import './navigation.scss';
 
 export const Navigation = () => {
   const { state } = useLocation();
-  console.log(state)
+  const category = state?.category;
+  const name = state?.titleText;
+
   return (
     <nav className="menu">
       <ul className="menu__items">
@@ -12,10 +14,14 @@ export const Navigation = () => {
           <Link to='/'>Home</Link>
         </li>
 
-        <RenderElement data={state?.category}>
+        <RenderElement data={category}>
           <li className="menu__item">
-            <Link to={`/${state?.category}`}>{state?.category}</Link>
+            <Link to={`/${category}`} state={{ category }}>{category}</Link>
           </li>
+        </RenderElement>
+
+        <RenderElement data={name}>
+          <li className="menu__item menu__item_cursor">{name}</li>
         </RenderElement>
       </ul>
     </nav>

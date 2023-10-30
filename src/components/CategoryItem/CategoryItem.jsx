@@ -1,9 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import useImg from '../../utils/hooks/useImg';
 import { imageAPI } from '../../utils/APIs/imageAPI';
 import './categoryItem.scss';
 
-export const CategoryItem = ({ data, category }) => {
+export const CategoryItem = ({ data }) => {
+  const { state } = useLocation();
+  const category = state?.category;
+
   const { name, title, url } = data;
   const idItem = url.match(/\/(\d+)\/$/)[1];
   const { isValidSrc, isError, setIsError } = useImg(`${imageAPI}/${category}/${idItem}.jpg`);

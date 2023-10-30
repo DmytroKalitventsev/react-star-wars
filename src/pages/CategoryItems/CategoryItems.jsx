@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import useFetch from "../../utils/hooks/useFetch";
 import Loading from "../../utils/hoc/Loading";
 import { baseAPI } from "../../utils/APIs/baseAPI";
@@ -6,8 +6,8 @@ import { CategoryItem, Pagination } from "../../components";
 import './categoryItems.scss';
 
 export const CategoryItems = () => {
-  const { category } = useParams();
-  const location = useLocation();
+  const {state} = useLocation();
+  const category = state?.category;
   const linkAddress = category === 'characters' ? 'people' : category;
   const { data, loading, isValidApi } = useFetch(`${baseAPI}/${linkAddress}/`);
 
@@ -19,7 +19,6 @@ export const CategoryItems = () => {
             <CategoryItem
               key={crypto.randomUUID()}
               data={item}
-              category={category}
             />
           )
         }

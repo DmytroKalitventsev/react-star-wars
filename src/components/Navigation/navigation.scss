@@ -20,6 +20,10 @@
     transition: color 0.3s ease 0s;
     text-transform: capitalize;
 
+    &_cursor {
+      cursor: initial;
+    }
+
     &:not(:last-child) {
       &::after {
         content: "/";
