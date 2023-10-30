@@ -1,9 +1,9 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './errorPage.scss';
 import { Logo } from '../../components';
 
 export const ErrorPage = () => {
-  const { '*': address } = useParams();
+  const {pathname} = useLocation();
   const navigate = useNavigate();
 
   const turnBack = () => navigate(-1);
@@ -22,7 +22,7 @@ export const ErrorPage = () => {
           <div className="error-content__url">
             <span className="error-content__text-url">
               The requested URL
-              <span className='error-content__text-url silver-text'> https://{address} </span>
+              <span className='error-content__text-url silver-text'> https:/{pathname} </span>
               was not found on this server.
             </span>
             <span className="error-content__text-url silver-text"> That's all we know.</span>

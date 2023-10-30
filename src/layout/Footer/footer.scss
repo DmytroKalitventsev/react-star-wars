@@ -7,10 +7,20 @@
   gap: 20px;
   padding-bottom: 20px;
 
+  @media (max-width: 850px) {
+    gap: 10px;
+    align-items: center;
+  }
+
   &__main-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+
+    @media (max-width: 850px) {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 }

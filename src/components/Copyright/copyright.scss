@@ -1,6 +1,13 @@
 .copyright {
-  display: flex;
-  align-self: center;
-  gap: 5px;
+  display: inline-block;
   font-size: 14px;
+  text-align: center;
+
+  &__link {
+    margin-left: 5px;
+  }
+
+  @media (max-width: 850px) {
+    max-width: 500px;
+  }
 }
