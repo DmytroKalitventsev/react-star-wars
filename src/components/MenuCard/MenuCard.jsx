@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import './menuCard.scss';
+import { Link } from "react-router-dom";
 
 export const MenuCard = ({ data }) => {
   const { name } = data;

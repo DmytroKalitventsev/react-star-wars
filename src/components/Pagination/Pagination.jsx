@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import './pagination.scss';
+import { Link } from 'react-router-dom';
 
 export const Pagination = () => {
   return (
@@ -14,9 +14,6 @@ export const Pagination = () => {
         <Link className='page__link page__link_dots' href="#">...</Link>
       </li>
       <li className='page__item'>
-        <Link className='page__link' href="#">3</Link>
-      </li>
-      <li className='page__item'>
         <Link className='page__link' href="#">4</Link>
       </li>
       <li className='page__item'>
@@ -24,9 +21,6 @@ export const Pagination = () => {
       </li>
       <li className='page__item'>
         <Link className='page__link' href="#">6</Link>
-      </li>
-      <li className='page__item'>
-        <Link className='page__link' href="#">7</Link>
       </li>
       <li className='page__item'>
         <Link className='page__link page__link_dots' href="#">...</Link>

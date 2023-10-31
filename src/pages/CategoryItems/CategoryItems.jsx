@@ -1,9 +1,9 @@
-import { useLocation } from "react-router-dom";
-import useFetch from "../../utils/hooks/useFetch";
-import Loading from "../../utils/hoc/Loading";
-import { baseAPI } from "../../utils/APIs/baseAPI";
-import { CategoryItem, Pagination } from "../../components";
 import './categoryItems.scss';
+import { useLocation } from "react-router-dom";
+import { CategoryItem, Pagination } from "../../components";
+import { useFetch } from '../../utils/hooks';
+import { baseAPI } from '../../utils/APIs';
+import { Loading } from '../../utils/hoc';
 
 export const CategoryItems = () => {
   const {state} = useLocation();

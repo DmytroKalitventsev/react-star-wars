@@ -1,5 +1,5 @@
-import { useLocation, useNavigate } from 'react-router-dom';
 import './errorPage.scss';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Logo } from '../../components';
 
 export const ErrorPage = () => {

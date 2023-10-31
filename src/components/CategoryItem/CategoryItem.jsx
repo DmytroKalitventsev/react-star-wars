@@ -1,7 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
-import useImg from '../../utils/hooks/useImg';
-import { imageAPI } from '../../utils/APIs/imageAPI';
+import { imageAPI } from '../../utils/APIs';
+import { useValidationImg } from '../../utils/hooks';
 import './categoryItem.scss';
+import { Link, useLocation } from 'react-router-dom';
 
 export const CategoryItem = ({ data }) => {
   const { state } = useLocation();
@@ -9,7 +9,7 @@ export const CategoryItem = ({ data }) => {
 
   const { name, title, url } = data;
   const idItem = url.match(/\/(\d+)\/$/)[1];
-  const { isValidSrc, isError, setIsError } = useImg(`${imageAPI}/${category}/${idItem}.jpg`);
+  const { isValidSrc, isError, setIsError } = useValidationImg(`${imageAPI}/${category}/${idItem}.jpg`);
   const titleText = name ? name : title;
 
   return (

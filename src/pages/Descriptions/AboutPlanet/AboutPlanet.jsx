@@ -1,10 +1,8 @@
 import { useLocation } from 'react-router-dom';
-import { baseAPI } from '../../../utils/APIs/baseAPI';
-import useFetch from '../../../utils/hooks/useFetch';
-import useImg from '../../../utils/hooks/useImg';
-import { imageAPI } from '../../../utils/APIs/imageAPI';
-import Loading from '../../../utils/hoc/Loading';
 import './aboutPlanet.scss';
+import { useFetch, useValidationImg } from '../../../utils/hooks';
+import { baseAPI, imageAPI } from '../../../utils/APIs';
+import { Loading } from '../../../utils/hoc';
 
 export const AboutPlanet = () => {
   const { state } = useLocation();
@@ -12,7 +10,7 @@ export const AboutPlanet = () => {
   const category = state?.category;
   const linkAddress = category === 'characters' ? 'people' : category;
   const { data, loading, isValidApi } = useFetch(`${baseAPI}/${linkAddress}/${idItem}/`);
-  const { isValidSrc, isError, setIsError } = useImg(`${imageAPI}/${category}/${idItem}.jpg`);
+  const { isValidSrc, isError, setIsError } = useValidationImg(`${imageAPI}/${category}/${idItem}.jpg`);
 
   const { name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water, population, residents, films } = data;
 

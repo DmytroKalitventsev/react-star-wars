@@ -1,6 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
-import RenderElement from "../../utils/hoc/RenderElement";
 import './navigation.scss';
+import { Link, useLocation } from "react-router-dom";
+import { RenderElement } from "../../utils/hoc";
 
 export const Navigation = () => {
   const { state } = useLocation();

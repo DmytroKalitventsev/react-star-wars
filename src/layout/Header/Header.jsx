@@ -1,5 +1,5 @@
-import { Logo, Navigation } from "../../components";
 import './header.scss';
+import { Logo, Navigation } from "../../components";
 
 export const Header = () => {
   return (

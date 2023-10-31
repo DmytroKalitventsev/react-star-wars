@@ -1,5 +1,5 @@
-import { AboutDeveloper, Copyright, FollowMe } from '../../components';
 import './footer.scss';
+import { AboutDeveloper, Copyright, FollowMe } from '../../components';
 
 export const Footer = () => {
   return (

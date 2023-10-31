@@ -1,10 +1,8 @@
-import { useLocation } from 'react-router-dom';
-import useFetch from '../../../utils/hooks/useFetch';
-import useImg from '../../../utils/hooks/useImg';
-import { baseAPI } from '../../../utils/APIs/baseAPI';
-import { imageAPI } from '../../../utils/APIs/imageAPI';
-import Loading from '../../../utils/hoc/Loading';
 import './aboutSpecie.scss';
+import { useLocation } from 'react-router-dom';
+import { baseAPI, imageAPI } from '../../../utils/APIs';
+import { useFetch, useValidationImg } from '../../../utils/hooks';
+import { Loading } from '../../../utils/hoc';
 
 export const AboutSpecie = () => {
   const { state } = useLocation();
@@ -12,7 +10,7 @@ export const AboutSpecie = () => {
   const category = state?.category;
   const linkAddress = category === 'characters' ? 'people' : category;
   const { data, loading, isValidApi } = useFetch(`${baseAPI}/${linkAddress}/${idItem}/`);
-  const { isValidSrc, isError, setIsError } = useImg(`${imageAPI}/${category}/${idItem}.jpg`);
+  const { isValidSrc, isError, setIsError } = useValidationImg(`${imageAPI}/${category}/${idItem}.jpg`);
 
   const { name, classification, designation, average_height, skin_colors, hair_colors, eye_colors, average_lifespan, homeworld, language, people, films } = data;
 

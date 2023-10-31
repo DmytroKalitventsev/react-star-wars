@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (api) => {
+export const useFetch = (api) => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
   const [isValidApi, setIsValidApi] = useState({
@@ -31,5 +31,3 @@ const useFetch = (api) => {
 
   return { data, isValidApi, loading };
 }
-
-export default useFetch;

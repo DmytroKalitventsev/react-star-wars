@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useImg = (srcImage) => {
+export const useValidationImg = (srcImage) => {
   const [isValidSrc, setIsValidSrc] = useState(srcImage);
   const [isError, setIsError] = useState(false);
 
@@ -16,5 +16,3 @@ const useImg = (srcImage) => {
 
   return { isValidSrc, isError, setIsError };
 }
-
-export default useImg;
