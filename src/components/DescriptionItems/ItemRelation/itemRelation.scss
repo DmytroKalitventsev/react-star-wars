@@ -1,11 +1,19 @@
 .item-relation {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: auto 1fr / 1fr;
+  justify-items: center;
   gap: 5px;
-  max-width: 100px;
+  height: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease 0s;
   cursor: pointer;
+
+  &:hover {
+    background-color: #2d2e30;
+  }
 
   &__img {
     width: 40px;

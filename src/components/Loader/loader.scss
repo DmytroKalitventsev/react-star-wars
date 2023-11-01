@@ -1,37 +1,37 @@
-.loader_wrapper {
+.loader {
   display: inline-block;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   filter: drop-shadow(0 0 1px white);
-}
 
-.text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 30px;
-  font-family: arial;
-  color: white;
-  text-shadow: 1px 1px 1px black;
-  animation: blink 2s ease infinite;
-}
+  &__svg {
+    width: 200px;
+    height: 200px;
+    animation: flip 3s linear infinite;
+  }
 
-.loader {
-  width: 200px;
-  height: 200px;
-  animation: flip 3s linear infinite;
-}
+  path {
+    stroke: black;
+    stroke-width: 30;
+    fill: transparent;
 
-.loader path {
-  stroke: black;
-  stroke-width: 30;
-  fill: transparent;
+    stroke-dasharray: 100px 5px;
+    animation: spin 1s ease-in-out infinite alternate;
+  }
 
-  stroke-dasharray: 100px 5px;
-  animation: spin 1s ease-in-out infinite alternate;
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-family: arial;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    animation: blink 2s ease infinite;
+  }
 }
 
 @keyframes spin {
