@@ -11,7 +11,11 @@ export const CategoryItem = ({ data }) => {
   const titleText = name ? name : title;
 
   return (
-    <Link to={`${titleText.toLowerCase().replace(/\s/g, '-')}`} className="category-item" state={{ idItem, category, titleText }}>
+    <Link
+      className="category-item"
+      to={`${titleText.toLowerCase().replace(/\s/g, '-')}`}
+      state={{ idItem, category, titleText }}
+    >
 
       <ImageItems
         name={titleText}

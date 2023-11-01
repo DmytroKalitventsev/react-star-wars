@@ -23,7 +23,9 @@ export const CategoryItems = () => {
           )
         }
       </div>
+
       <Pagination />
+      
     </Loading>
   );
 };

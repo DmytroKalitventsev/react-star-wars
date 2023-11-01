@@ -13,6 +13,7 @@ export const useFetch = (api) => {
     fetch(api)
       .then(res => {
         const { ok, status, url } = res;
+        setLoading(true);
 
         if (!res.ok) {
           setIsValidApi(prev => ({ ...prev, ok, status, url }));

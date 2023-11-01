@@ -1,4 +1,5 @@
 import './itemRelation.scss';
+import { Link } from 'react-router-dom';
 import { ImageItems } from '../../ImageItems/ImageItems';
 
 export const ItemRelation = ({ relation, category }) => {
@@ -7,8 +8,12 @@ export const ItemRelation = ({ relation, category }) => {
   const idItem = url.match(/\/(\d+)\/$/)[1];
 
   return (
-    <div className="item-relation">
-      
+    <Link
+      className="item-relation"
+      to={`/${category}/${titleText.toLowerCase().replace(/\s/g, '-')}`}
+      state={{ idItem, category, titleText }}
+    >
+
       <ImageItems
         name={titleText}
         category={category}
@@ -16,6 +21,6 @@ export const ItemRelation = ({ relation, category }) => {
       />
 
       <div className="item-relation__name">{titleText}</div>
-    </div>
+    </Link>
   );
 };
