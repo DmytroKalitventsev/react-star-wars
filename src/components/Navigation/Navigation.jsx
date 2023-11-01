@@ -8,20 +8,20 @@ export const Navigation = () => {
   const name = state?.titleText;
 
   return (
-    <nav className="menu">
-      <ul className="menu__items">
-        <li className="menu__item">
+    <nav className="navigation">
+      <ul className="navigation__items">
+        <li className="navigation__item">
           <Link to='/'>Home</Link>
         </li>
 
         <RenderElement data={category}>
-          <li className="menu__item">
+          <li className="navigation__item">
             <Link to={`/${category}`} state={{ category }}>{category}</Link>
           </li>
         </RenderElement>
 
         <RenderElement data={name}>
-          <li className="menu__item menu__item_cursor">{name}</li>
+          <li className="navigation__item navigation__item_cursor">{name}</li>
         </RenderElement>
       </ul>
     </nav>

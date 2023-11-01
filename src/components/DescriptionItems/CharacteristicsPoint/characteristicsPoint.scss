@@ -1,0 +1,12 @@
+.characteristics-point {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  text-transform: capitalize;
+
+  &__title {
+  }
+
+  &__info {
+  }
+}
