@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useFetch, useValidationImg } from '../../../utils/hooks';
 import { baseAPI, imageAPI } from '../../../utils/APIs';
 import { Loading } from '../../../utils/hoc';
+import { CharacteristicsPoints } from '../../../components';
 
 export const AboutFilm = () => {
   const { state } = useLocation();
@@ -25,25 +26,9 @@ export const AboutFilm = () => {
               onLoad={() => isError ? setIsError(false) : null}
             />
           </div>
-          <div className="characteristics-points">
-            <h2 className="characteristics-points__name">{title}</h2>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Date Created:</div>
-              <div className="characteristics-point__info">{release_date}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Director:</div>
-              <div className="characteristics-point__info">{director}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Producer(s):</div>
-              <div className="characteristics-point__info">{producer}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Opening Crawl:</div>
-              <div className="characteristics-point__info">{opening_crawl}</div>
-            </div>
-          </div>
+
+          <CharacteristicsPoints data={data}/>
+
         </div>
         <div className='items-related'>
           <div className="items-related__item">

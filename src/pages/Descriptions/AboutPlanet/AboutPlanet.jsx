@@ -3,6 +3,7 @@ import './aboutPlanet.scss';
 import { useFetch, useValidationImg } from '../../../utils/hooks';
 import { baseAPI, imageAPI } from '../../../utils/APIs';
 import { Loading } from '../../../utils/hoc';
+import { CharacteristicsPoints } from '../../../components';
 
 export const AboutPlanet = () => {
   const { state } = useLocation();
@@ -26,41 +27,9 @@ export const AboutPlanet = () => {
               onLoad={() => isError ? setIsError(false) : null}
             />
           </div>
-          <div className="characteristics-points">
-            <h2 className="characteristics-points__name">{name}</h2>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Rotation Period: </div>
-              <div className="characteristics-point__info">{rotation_period}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Orbital Period: </div>
-              <div className="characteristics-point__info">{orbital_period}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Diameter:</div>
-              <div className="characteristics-point__info">{diameter}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Climate:</div>
-              <div className="characteristics-point__info">{climate}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Gravity:</div>
-              <div className="characteristics-point__info">{gravity}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Surface Water:</div>
-              <div className="characteristics-point__info">{surface_water}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Population:</div>
-              <div className="characteristics-point__info">{population}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Terrain:</div>
-              <div className="characteristics-point__info">{terrain}</div>
-            </div>
-          </div>
+
+          <CharacteristicsPoints data={data}/>
+          
         </div>
         <div className='items-related'>
           <div className="items-related__item">

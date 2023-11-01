@@ -15,7 +15,7 @@ export const useFetch = (api) => {
         const { ok, status, url } = res;
 
         if (!res.ok) {
-          setIsValidApi({ ...isValidApi, ok, status, url });
+          setIsValidApi(prev => ({ ...prev, ok, status, url }));
           throw new Error(`API returned a status code of ${status}`);
         }
 
@@ -27,7 +27,7 @@ export const useFetch = (api) => {
       })
       .catch(error => console.error(error));
 
-  }, []);
+  }, [api]);
 
-  return { data, isValidApi, loading };
+  return { data, loading, isValidApi };
 }

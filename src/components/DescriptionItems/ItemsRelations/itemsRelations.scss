@@ -1,0 +1,20 @@
+.items-relations {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #1d1e1f;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px;
+  }
+
+  &__title {
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+}

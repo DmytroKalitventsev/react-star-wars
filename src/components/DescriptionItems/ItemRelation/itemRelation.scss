@@ -1,0 +1,22 @@
+.item-relation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  max-width: 100px;
+  cursor: pointer;
+
+  &__img {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__name {
+    text-align: center;
+    font-size: 14px;
+  }
+}

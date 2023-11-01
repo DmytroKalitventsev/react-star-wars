@@ -1,7 +1,7 @@
-import './common.scss';
+import '../../common.scss';
 import { Footer, Header, Main } from '../../layout';
 
-export const InitialPage = () => {
+export const BasicStructure = () => {
   return (
     <div className='wrapper'>
 

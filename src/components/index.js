@@ -7,3 +7,7 @@ export * from './AboutDeveloper/AboutDeveloper';
 export * from './Copyright/Copyright';
 export * from './Logo/Logo';
 export * from './Pagination/Pagination';
+export * from './DescriptionItems/CharacteristicsPoints/CharacteristicsPoints';
+export * from './DescriptionItems/ItemsRelations/ItemsRelations';
+export * from './DescriptionItems/RelationsList/RelationsList';
+export * from './DescriptionItems/ItemRelation/ItemRelation';

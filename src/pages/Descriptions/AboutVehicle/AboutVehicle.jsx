@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { useFetch, useValidationImg } from '../../../utils/hooks';
 import { baseAPI, imageAPI } from '../../../utils/APIs';
 import { Loading } from '../../../utils/hoc';
+import { CharacteristicsPoints } from '../../../components';
 
 export const AboutVehicle = () => {
   const { state } = useLocation();
@@ -38,45 +39,9 @@ export const AboutVehicle = () => {
               onLoad={() => isError ? setIsError(false) : null}
             />
           </div>
-          <div className="characteristics-points">
-            <h2 className="characteristics-points__name">{name}</h2>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Model:</div>
-              <div className="characteristics-point__info">{model}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Manufacturer:</div>
-              <div className="characteristics-point__info">{manufacturer}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Class:</div>
-              <div className="characteristics-point__info">{vehicle_class}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Cost:</div>
-              <div className="characteristics-point__info">{cost_in_credits}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Speed:</div>
-              <div className="characteristics-point__info">{max_atmosphering_speed}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Length:</div>
-              <div className="characteristics-point__info">{length}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Cargo Capacity:</div>
-              <div className="characteristics-point__info">{cargo_capacity}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Mimimum Crew:</div>
-              <div className="characteristics-point__info">{crew}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Passengers:</div>
-              <div className="characteristics-point__info">{passengers}</div>
-            </div>
-          </div>
+          
+          <CharacteristicsPoints data={data}/>
+
         </div>
         <div className='items-related'>
           <div className="items-related__item">

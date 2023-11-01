@@ -1,0 +1,30 @@
+.characteristics-points {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px 15px 15px 20px;
+  background-color: #1d1e1f;
+
+  &__name {
+    font-size: 20px;
+  }
+}
+
+.characteristics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.characteristics-point {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  text-transform: capitalize;
+
+  &__title {
+  }
+
+  &__info {
+  }
+}

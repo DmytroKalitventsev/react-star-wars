@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { baseAPI, imageAPI } from '../../../utils/APIs';
 import { useFetch, useValidationImg } from '../../../utils/hooks';
 import { Loading } from '../../../utils/hoc';
+import { CharacteristicsPoints } from '../../../components';
 
 export const AboutSpecie = () => {
   const { state } = useLocation();
@@ -25,45 +26,9 @@ export const AboutSpecie = () => {
               onLoad={() => isError ? setIsError(false) : null}
             />
           </div>
-          <div className="characteristics-points">
-            <h2 className="characteristics-points__name">{name}</h2>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Classification:</div>
-              <div className="characteristics-point__info">{classification}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Designation:</div>
-              <div className="characteristics-point__info">{designation}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Language:</div>
-              <div className="characteristics-point__info">{language}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Avg Lifespan:</div>
-              <div className="characteristics-point__info">{average_lifespan}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Avg Height:</div>
-              <div className="characteristics-point__info">{average_height}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Hair Color(s):</div>
-              <div className="characteristics-point__info">{hair_colors}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Skin Color(s):</div>
-              <div className="characteristics-point__info">{skin_colors}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Eye Color(s):</div>
-              <div className="characteristics-point__info">{eye_colors}</div>
-            </div>
-            <div className="characteristics-point">
-              <div className="characteristics-point__title">Homeworld:</div>
-              <div className="characteristics-point__info">{homeworld}</div>
-            </div>
-          </div>
+
+          <CharacteristicsPoints data={data}/>
+
         </div>
         <div className='items-related'>
           <div className="items-related__item">
