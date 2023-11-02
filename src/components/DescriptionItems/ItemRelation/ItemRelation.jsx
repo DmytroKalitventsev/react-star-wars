@@ -6,17 +6,18 @@ export const ItemRelation = ({ relation, category }) => {
   const { name, title, url } = relation;
   const titleText = name ? name : title;
   const idItem = url.match(/\/(\d+)\/$/)[1];
+  const categoryItem = category === 'people' || category === 'pilots' || category === 'residents' ? 'characters' : category;
 
   return (
     <Link
       className="item-relation"
-      to={`/${category}/${titleText.toLowerCase().replace(/\s/g, '-')}`}
-      state={{ idItem, category, titleText }}
+      to={`/${categoryItem}/${titleText.toLowerCase().replace(/\s/g, '-')}`}
+      state={{ idItem, category: categoryItem, titleText }}
     >
 
       <ImageItems
         name={titleText}
-        category={category}
+        category={categoryItem}
         idItem={idItem}
       />
 

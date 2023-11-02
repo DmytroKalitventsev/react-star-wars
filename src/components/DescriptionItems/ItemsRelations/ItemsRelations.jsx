@@ -14,7 +14,7 @@ export const ItemsRelations = ({ data }) => {
     'residents',
   ];
   const relations = Object.entries(data).filter(([key]) => includesData.includes(key));
-  
+
   return (
     <div className='items-relations'>
       {
@@ -22,7 +22,7 @@ export const ItemsRelations = ({ data }) => {
           <div className="items-relations__item" key={crypto.randomUUID()}>
             <h2 className="items-relations__title">Related {category}</h2>
 
-            <RelationsList links={links} category={category}/>
+            <RelationsList links={links} category={category} />
 
           </div>
         ))
