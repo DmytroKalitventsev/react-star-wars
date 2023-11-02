@@ -1,8 +1,9 @@
 import './errorContent.scss';
 import { useNavigate } from 'react-router-dom';
 import { Logo } from '../Logo/Logo';
+import { RenderElement } from '../../utils/hoc';
 
-export const ErrorContent = ({url, status = '404'}) => {
+export const ErrorContent = ({ url, status }) => {
   const navigate = useNavigate();
 
   const turnBack = () => navigate(-1);
@@ -10,10 +11,12 @@ export const ErrorContent = ({url, status = '404'}) => {
   return (
     <div className='error-content'>
 
-      <Logo />
+      <RenderElement data={!status}>
+        <Logo />
+      </RenderElement>
 
       <div className='error-content__status'>
-        <span className='error-content__text-status'>{status}. </span>
+        <span className='error-content__text-status'>{status ? status : '404'}. </span>
         <span className='error-content__text-status silver-text'>That's an error.</span>
       </div>
       <div className="error-content__url">

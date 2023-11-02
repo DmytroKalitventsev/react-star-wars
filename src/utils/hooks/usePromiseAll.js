@@ -14,9 +14,11 @@ export const usePromiseAll = (links) => {
       fetch(link)
         .then(res => {
           const { ok, status, url } = res;
+          setLoading(true);
 
           if (!res.ok) {
             setIsValidApi(prev => ({ ...prev, ok, status, url }));
+            setLoading(false);
             throw new Error(`API returned a status code of ${status}`);
           }
 

@@ -1,7 +1,7 @@
 import './descriptionsItems.scss';
 import { useLocation } from 'react-router-dom';
 import { baseAPI } from '../../utils/APIs';
-import { Loading } from '../../utils/hoc';
+import { ErrorProcessing, Loading } from '../../utils/hoc';
 import { useFetch } from '../../utils/hooks';
 import { ItemCharacteristics, ItemsRelations } from '../../components';
 
@@ -11,21 +11,23 @@ export const DescriptionsItems = () => {
   const category = state?.category;
   const linkAddress = category === 'characters' ? 'people' : category;
 
-  const { data, loading, isValidApi } = useFetch(`${baseAPI}/${linkAddress}/${idItem}/`);
+  const { data, loading, isValidApi } = useFetch(`${baseAPI}/${linkAddress}/${idItem}`);
 
   return (
     <Loading data={loading}>
-      <div className='descriptions-items'>
+      <ErrorProcessing isValidApi={isValidApi}>
+        <div className='descriptions-items'>
 
-        <ItemCharacteristics
-          data={data}
-          idItem={idItem}
-          category={category}
-        />
+          <ItemCharacteristics
+            data={data}
+            idItem={idItem}
+            category={category}
+          />
 
-        <ItemsRelations data={data} />
+          <ItemsRelations data={data} />
 
-      </div>
+        </div>
+      </ErrorProcessing>
     </Loading>
   );
 };

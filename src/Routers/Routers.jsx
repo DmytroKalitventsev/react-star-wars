@@ -1,7 +1,7 @@
 import { Route, Routes, HashRouter } from "react-router-dom";
 import { BasicStructure, HomeMenu, ErrorPage, CategoryItems, DescriptionsItems } from "../pages";
 
-const Routers = () => {
+export const Routers = () => {
   return (
     <HashRouter>
       <Routes>
@@ -15,5 +15,3 @@ const Routers = () => {
     </HashRouter>
   );
 };
-
-export default Routers;
