@@ -12,7 +12,7 @@ export const useValidationImg = (srcImage) => {
       setIsError(true);
       setIsValidSrc('/img/image-not-found.png');
     };
-  }, []);
+  }, [srcImage]);
 
   return { isValidSrc, isError, setIsError };
 }

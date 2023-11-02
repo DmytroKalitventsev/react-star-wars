@@ -1,7 +1,10 @@
 import './pagination.scss';
 import { Link } from 'react-router-dom';
 
-export const Pagination = () => {
+export const Pagination = ({ data }) => {
+  const totalPages = Math.ceil(data.count / 10);
+  console.log(totalPages)
+
   return (
     <ul className="page">
       <li className='page__item'>

@@ -9,7 +9,7 @@ export const CategoryItems = () => {
   const { state } = useLocation();
   const category = state?.category;
   const linkAddress = category === 'characters' ? 'people' : category;
-  const { data, loading, isValidApi } = useFetch(`${baseAPI}/${linkAddress}`);
+  const { data, loading, isValidApi } = useFetch(`${baseAPI}/${linkAddress}/?page=1`);
 
   return (
     <Loading data={loading}>
@@ -24,8 +24,7 @@ export const CategoryItems = () => {
             )
           }
         </div>
-
-        <Pagination />
+        <Pagination data={data} />
       </ErrorProcessing>
     </Loading>
   );
