@@ -1,5 +1,5 @@
 import { Route, Routes, HashRouter } from "react-router-dom";
-import { BasicStructure, HomeMenu, CategoryItems, ErrorPage, DescriptionsItems } from "../pages";
+import { BasicStructure, HomeMenu, ErrorPage, CategoryItems, DescriptionsItems } from "../pages";
 
 const Routers = () => {
   return (
