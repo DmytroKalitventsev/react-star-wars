@@ -15,17 +15,18 @@ export const useFetch = (api) => {
         const { ok, status, url } = res;
         setLoading(true);
 
+
         if (!res.ok) {
-          setIsValidApi(prev => ({ ...prev, ok, status, url }));
           setLoading(false);
+          setIsValidApi(prev => ({ ...prev, ok, status, url }));
           throw new Error(`API returned a status code of ${status}`);
         }
 
         return res.json();
       })
       .then(data => {
-        setData(data);
         setLoading(false);
+        setData(data);
       })
       .catch(error => console.error(error));
 

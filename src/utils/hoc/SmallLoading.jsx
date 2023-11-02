@@ -1,9 +1,11 @@
+import { EllipsisLoader } from "../../components"
+
 export const SmallLoading = ({ children, data }) => {
   return (
     <>
       {
         data
-          ? <div className="loading-informer">Loading...</div>
+          ? <EllipsisLoader />
           : children
       }
     </>

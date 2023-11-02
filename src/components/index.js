@@ -2,6 +2,7 @@ export * from './Logo/Logo';
 export * from './Navigation/Navigation';
 export * from './Pagination/Pagination';
 export * from './Loader/Loader';
+export * from './EllipsisLoader/EllipsisLoader';
 export * from './ErrorContent/ErrorContent';
 export * from './ImageItems/ImageItems';
 export * from './MenuCard/MenuCard';

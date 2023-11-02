@@ -17,6 +17,17 @@
     border-radius: 10px;
     overflow: hidden;
     padding: 15px;
+    position: relative;
+
+    .loader {
+      &__svg {
+        width: 100px;
+        height: 100px;
+      }
+      &__text {
+        font-size: 25px;
+      }
+    }
   }
 
   &__title {

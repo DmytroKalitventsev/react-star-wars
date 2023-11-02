@@ -7,24 +7,27 @@ export const RelationsList = ({ links, category }) => {
   const { data, loading, isValidApi } = usePromiseAll(links);
 
   return (
-    <div className='relations-list'>
-      <Loading data={loading}>
-        <ErrorTextInformer isValidApi={isValidApi}>
-          {
-            data.length
-              ?
-              data.map(relation => (
-                <ItemRelation
-                  relation={relation}
-                  category={category}
-                  key={crypto.randomUUID()}
-                />
-              ))
-              :
-              <div className='relations-list__validation'>There are no related items for this category</div>
-          }
-        </ErrorTextInformer>
-      </Loading>
-    </div>
+    <Loading data={loading}>
+      <ErrorTextInformer isValidApi={isValidApi}>
+        {
+          data.length
+            ?
+            <div className='relations-list'>
+              {
+                data.map(relation => (
+                  <ItemRelation
+                    relation={relation}
+                    category={category}
+                    key={crypto.randomUUID()}
+                  />
+                ))
+              }
+            </div>
+            :
+            <div className='relations-list__validation'>There are no related items for this category</div>
+        }
+      </ErrorTextInformer>
+    </Loading>
+
   );
 };

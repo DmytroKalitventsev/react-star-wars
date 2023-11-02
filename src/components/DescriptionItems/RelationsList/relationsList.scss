@@ -8,16 +8,4 @@
 
   &__validation {
   }
-
-  .loader {
-    transform: translate(-50%, -20%);
-
-    &__svg {
-      width: 100px;
-      height: 100px;
-    }
-    &__text {
-      font-size: 25px;
-    }
-  }
 }
