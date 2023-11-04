@@ -15,24 +15,6 @@ export const CategoryItems = () => {
   const { data, loading, isValidApi } = useFetch(`${baseAPI}/${linkAddress}/?page=${currentPage}`);
   const { results: dataItems, count: countItems } = data;
 
-  const totalPage = Math.ceil(countItems / dataItems?.length);
-
-  const handlePageChange = (value) => {
-    if (value === '...') return;
-
-    if (value === 'prev' && currentPage !== 1) {
-      setCurrentPage(prev => prev - 1);
-    }
-
-    if (value === 'next' && currentPage !== totalPage) {
-      setCurrentPage(prev => prev + 1);
-    }
-
-    if (value !== 'next' && value !== 'prev') {
-      setCurrentPage(value);
-    }
-  }
-  console.log(currentPage)
   return (
     <Loading data={loading}>
       <ErrorProcessing isValidApi={isValidApi}>
@@ -48,10 +30,9 @@ export const CategoryItems = () => {
         </div>
 
         <Pagination
-          totalPage={totalPage}
+          countItems={countItems}
           currentPage={currentPage}
-          siblings={1}
-          onPageChange={handlePageChange}
+          setCurrentPage={setCurrentPage}
         />
 
       </ErrorProcessing>

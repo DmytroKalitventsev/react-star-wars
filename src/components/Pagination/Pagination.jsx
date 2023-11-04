@@ -1,32 +1,51 @@
 import './pagination.scss';
 import { usePaginationRange } from '../../utils/hooks';
 
-export const Pagination = ({ totalPage, currentPage, siblings, onPageChange }) => {
+export const Pagination = ({ countItems, currentPage, setCurrentPage }) => {
+  const totalPage = Math.ceil(countItems / 10);
+  const siblings = 1;
+
   const array = usePaginationRange(totalPage, currentPage, siblings);
+
+  const handlePageChange = (value) => {
+    if (value === '...') return;
+
+    if (value === 'prev' && currentPage !== 1) {
+      setCurrentPage(prev => prev - 1);
+    }
+
+    if (value === 'next' && currentPage !== totalPage) {
+      setCurrentPage(prev => prev + 1);
+    }
+
+    if (value !== 'next' && value !== 'prev') {
+      setCurrentPage(value);
+    }
+  }
   
   return (
-    <ul className="page">
-      <li className='page__item'>
-        <span className='page__link' href="#" onClick={() => onPageChange('prev')}>&#10094;</span>
+    <ul className="pagination">
+      <li className='pagination__item'>
+        <span className='pagination__link' href="#" onClick={() => handlePageChange('prev')}>&#10094;</span>
       </li>
       {
         array.map(value => (
-          <li className='page__item' key={crypto.randomUUID()}>
+          <li className='pagination__item' key={crypto.randomUUID()}>
             <span
-              className={`page__link
-                ${value === currentPage ? 'page__link_active' : ''}
-                ${value === '...' ? 'page__link_dots' : ''}
+              className={`pagination__link
+                ${value === currentPage ? 'pagination__link_active' : ''}
+                ${value === '...' ? 'pagination__link_dots' : ''}
               `}
               href="#"
-              onClick={() => onPageChange(value)}
+              onClick={() => handlePageChange(value)}
             >
               {value}
             </span>
           </li>
         ))
       }
-      <li className='page__item'>
-        <span className='page__link' href="#" onClick={() => onPageChange('next')}>&#10095;</span>
+      <li className='pagination__item'>
+        <span className='pagination__link' href="#" onClick={() => handlePageChange('next')}>&#10095;</span>
       </li>
     </ul>
   );
