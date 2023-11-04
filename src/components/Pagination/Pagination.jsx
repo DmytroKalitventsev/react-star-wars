@@ -1,38 +1,32 @@
 import './pagination.scss';
-import { Link } from 'react-router-dom';
+import { usePaginationRange } from '../../utils/hooks';
 
-export const Pagination = ({ data }) => {
-  const totalPages = Math.ceil(data.count / 10);
-  console.log(totalPages)
-
+export const Pagination = ({ totalPage, currentPage, siblings, onPageChange }) => {
+  const array = usePaginationRange(totalPage, currentPage, siblings);
+  
   return (
     <ul className="page">
       <li className='page__item'>
-        <Link className='page__link' href="#">Prev</Link>
+        <span className='page__link' href="#" onClick={() => onPageChange('prev')}>&#10094;</span>
       </li>
+      {
+        array.map(value => (
+          <li className='page__item' key={crypto.randomUUID()}>
+            <span
+              className={`page__link
+                ${value === currentPage ? 'page__link_active' : ''}
+                ${value === '...' ? 'page__link_dots' : ''}
+              `}
+              href="#"
+              onClick={() => onPageChange(value)}
+            >
+              {value}
+            </span>
+          </li>
+        ))
+      }
       <li className='page__item'>
-        <Link className='page__link' href="#">1</Link>
-      </li>
-      <li className="page__item">
-        <Link className='page__link page__link_dots' href="#">...</Link>
-      </li>
-      <li className='page__item'>
-        <Link className='page__link' href="#">4</Link>
-      </li>
-      <li className='page__item'>
-        <Link className='page__link page__link_active' href="#">5</Link>
-      </li>
-      <li className='page__item'>
-        <Link className='page__link' href="#">6</Link>
-      </li>
-      <li className='page__item'>
-        <Link className='page__link page__link_dots' href="#">...</Link>
-      </li>
-      <li className='page__item'>
-        <Link className='page__link' href="#">15</Link>
-      </li>
-      <li className='page__item'>
-        <Link className='page__link' href="#">Next</Link>
+        <span className='page__link' href="#" onClick={() => onPageChange('next')}>&#10095;</span>
       </li>
     </ul>
   );
