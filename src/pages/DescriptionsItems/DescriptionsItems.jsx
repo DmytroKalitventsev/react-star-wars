@@ -11,7 +11,7 @@ export const DescriptionsItems = () => {
   const category = state?.category;
   const linkAddress = category === 'characters' ? 'people' : category;
 
-  const { data, loading, isValidApi } = useFetch(`${baseAPI}/${linkAddress}/${idItem}`);
+  const { data, loading, isValidApi } = useFetch(`${baseAPI}/${linkAddress}/${idItem}/123`);
 
   return (
     <Loading data={loading}>

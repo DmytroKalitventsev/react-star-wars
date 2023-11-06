@@ -15,19 +15,19 @@ export const ErrorContent = ({ url, status }) => {
         <Logo />
       </RenderElement>
 
-      <div className='error-content__status'>
-        <span className='error-content__text-status'>{status ? status : '404'}. </span>
-        <span className='error-content__text-status silver-text'>That's an error.</span>
-      </div>
-      <div className="error-content__url">
-        <span className="error-content__text-url">
+      <div className='error-content__main'>
+        <div className='error-content__status'>
+          <span className='error-content__text-status'>{status ? status : '404'}. </span>
+          <span className='error-content__text-status silver-text'>That's an error.</span>
+        </div>
+        <div className="error-content__url">
           The requested URL
-          <span className='error-content__text-url silver-text'> {url} </span>
+          <span className='silver-text'> {url} </span>
           was not found on this server.
-        </span>
-        <span className="error-content__text-url silver-text"> That's all we know.</span>
+          <span className="silver-text"> That's all we know.</span>
+        </div>
+        <div onClick={turnBack} className="error-content__return-home lightsaber">Turn Back</div>
       </div>
-      <div onClick={turnBack} className="error-content__return-home lightsaber">Turn Back</div>
 
       <div onClick={turnBack} className='error-content__quote'>
         <div className="error-content__picture">

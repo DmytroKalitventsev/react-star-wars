@@ -46,6 +46,12 @@
           content: "";
         }
       }
+
+      &::before {
+        @media (max-width: 450px) {
+          content: "•";
+        }
+      }
     }
 
     &:last-child {

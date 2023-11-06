@@ -25,7 +25,7 @@ export const Pagination = ({ countItems, currentPage, setCurrentPage }) => {
   
   return (
     <ul className="pagination">
-      <li className='pagination__item'>
+      <li className='pagination__item pagination__item_side'>
         <span className='pagination__link' href="#" onClick={() => handlePageChange('prev')}>&#10094;</span>
       </li>
       {
@@ -44,7 +44,7 @@ export const Pagination = ({ countItems, currentPage, setCurrentPage }) => {
           </li>
         ))
       }
-      <li className='pagination__item'>
+      <li className='pagination__item pagination__item_side'>
         <span className='pagination__link' href="#" onClick={() => handlePageChange('next')}>&#10095;</span>
       </li>
     </ul>
