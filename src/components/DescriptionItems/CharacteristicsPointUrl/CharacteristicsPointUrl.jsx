@@ -8,7 +8,8 @@ export const CharacteristicsPointUrl = ({ urlHomeWorld }) => {
   const { name, url } = data;
 
   const idItem = url?.match(/\/(\d+)\/$/)[1];
-  const category = url?.slice(22, -3);
+  const arrUrl = url?.split('/');
+  const category = arrUrl ? arrUrl[arrUrl.length - 3] : false;
 
   return (
     <SmallLoading data={loading}>
