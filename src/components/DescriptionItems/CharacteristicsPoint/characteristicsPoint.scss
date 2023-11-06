@@ -8,5 +8,18 @@
   }
 
   &__info {
+    display: flex;
+    gap: 5px;
+
+    &_text-transform {
+      text-transform: initial;
+    }
+  }
+
+  &__value {
+  }
+
+  &__unit {
+    text-transform: initial;
   }
 }
