@@ -5,6 +5,7 @@ export const CharacteristicsPoints = ({ data }) => {
   const exclusionData = [
     'name',
     'title',
+    'homeworld',
     'episode_id',
     'consumables',
     'films',
@@ -26,7 +27,10 @@ export const CharacteristicsPoints = ({ data }) => {
     <div className="characteristics-points">
       <h2 className="characteristics-points__name">{data.name ? data.name : data.title}</h2>
 
-      <CharacteristicsList characteristics={characteristics}/>
+      <CharacteristicsList
+        characteristics={characteristics}
+        urlHomeWorld={data.homeworld}
+      />
 
     </div>
   );
