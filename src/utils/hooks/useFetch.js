@@ -10,26 +10,24 @@ export const useFetch = (api) => {
   });
 
   useEffect(() => {
+    setLoading(true);
+
     fetch(api)
       .then(res => {
         const { ok, status, url } = res;
-        setLoading(true);
-
+        setIsValidApi(prev => ({ ...prev, ok, status, url }));
 
         if (!res.ok) {
-          setLoading(false);
-          setIsValidApi(prev => ({ ...prev, ok, status, url }));
           throw new Error(`API returned a status code of ${status}`);
         }
 
         return res.json();
       })
       .then(data => {
-        setLoading(false);
         setData(data);
       })
-      .catch(error => console.error(error));
-
+      .catch(error => console.error(error))
+      .finally(() => setLoading(false));
   }, [api]);
 
   return { data, loading, isValidApi };

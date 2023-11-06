@@ -1,10 +1,10 @@
 import './categoryItems.scss';
+import { useState } from 'react';
 import { useLocation } from "react-router-dom";
 import { useFetch } from '../../utils/hooks';
 import { baseAPI } from '../../utils/APIs';
 import { ErrorProcessing, Loading } from '../../utils/hoc';
 import { CategoryItem, Pagination } from "../../components";
-import { useState } from 'react';
 
 export const CategoryItems = () => {
   const { state } = useLocation();
