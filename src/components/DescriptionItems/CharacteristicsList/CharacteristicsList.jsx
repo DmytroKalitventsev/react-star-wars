@@ -1,24 +1,18 @@
 import './characteristicsList.scss';
-import { RenderElement } from '../../../utils/hoc';
 import { CharacteristicsPoint } from '../CharacteristicsPoint/CharacteristicsPoint';
-import { CharacteristicsPointUrl } from '../CharacteristicsPointUrl/CharacteristicsPointUrl';
 
-export const CharacteristicsList = ({ characteristics, urlHomeWorld }) => {
+export const CharacteristicsList = ({ characteristics }) => {
   return (
     <div className='characteristics-list'>
       {
-        characteristics.map(([title, value]) => (
+        characteristics.map(([title, info]) => (
           <CharacteristicsPoint
             title={title}
-            value={value}
+            info={info}
             key={crypto.randomUUID()}
           />
         ))
       }
-
-      <RenderElement data={urlHomeWorld}>
-        <CharacteristicsPointUrl urlHomeWorld={urlHomeWorld} />
-      </RenderElement>
     </div>
   );
 };

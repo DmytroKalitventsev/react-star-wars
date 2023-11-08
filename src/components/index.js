@@ -15,7 +15,6 @@ export * from './DescriptionItems/ItemCharacteristics/ItemCharacteristics';
 export * from './DescriptionItems/CharacteristicsPoints/CharacteristicsPoints';
 export * from './DescriptionItems/CharacteristicsList/CharacteristicsList';
 export * from './DescriptionItems/CharacteristicsPoint/CharacteristicsPoint';
-export * from './DescriptionItems/CharacteristicsPointUrl/CharacteristicsPointUrl';
 
 export * from './DescriptionItems/ItemsRelations/ItemsRelations';
 export * from './DescriptionItems/RelationsList/RelationsList';
