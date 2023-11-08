@@ -22,7 +22,7 @@ export const CharacteristicsPoints = ({ data }) => {
     'url'
   ];
   const characteristics = Object.entries(data).filter(([key]) => !exclusionData.includes(key));
-
+  
   return (
     <div className="characteristics-points">
       <h2 className="characteristics-points__name">{data.name ? data.name : data.title}</h2>

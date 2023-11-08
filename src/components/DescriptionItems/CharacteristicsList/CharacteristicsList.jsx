@@ -5,10 +5,10 @@ export const CharacteristicsList = ({ characteristics }) => {
   return (
     <div className='characteristics-list'>
       {
-        characteristics.map(([title, info]) => (
+        characteristics.map(([title, value]) => (
           <CharacteristicsPoint
             title={title}
-            info={info}
+            value={value}
             key={crypto.randomUUID()}
           />
         ))

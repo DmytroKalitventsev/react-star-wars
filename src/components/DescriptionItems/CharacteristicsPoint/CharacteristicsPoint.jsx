@@ -20,14 +20,14 @@ export const CharacteristicsPoint = ({ title, value }) => {
 
   return (
     <div className="characteristics-point">
-      <div className="characteristics-point__title">{title.replace(/_/g, ' ')}:</div>
+      <div className="characteristics-point__title">{title?.replace(/_/g, ' ')}:</div>
       {
         filmDescr
           ?
-          <div className="characteristics-point__info characteristics-point__info_text-transform">{value.replace('n/a', 'unknown')}</div>
+          <div className="characteristics-point__info characteristics-point__info_text-transform">{value?.replace('n/a', 'unknown')}</div>
           :
           <div className="characteristics-point__info">
-            <span className='characteristics-point__value'>{value.replace('n/a', 'unknown')}</span>
+            <span className='characteristics-point__value'>{value?.replace('n/a', 'unknown')}</span>
             <RenderElement data={unit}>
               <span className='characteristics-point__unit'>{unit}</span>
             </RenderElement>
