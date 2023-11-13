@@ -1,8 +1,8 @@
 export const useGetParamsFromUrl = (url) => {
-  const id = url?.match(/\/(\d+)\/$/)[1];
-  
-  const splitUrl = url?.split('/');
-  const category = splitUrl && splitUrl[splitUrl.length - 3];
+  const pathParts = url.split('/').filter(part => part !== '');
+
+  const id = pathParts.pop();
+  const category = pathParts.pop();
 
   return { id, category };
 }

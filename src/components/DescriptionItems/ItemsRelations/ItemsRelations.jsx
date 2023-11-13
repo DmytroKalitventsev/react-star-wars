@@ -18,17 +18,14 @@ export const ItemsRelations = ({ itemDescriptions }) => {
   return (
     <div className='items-relations'>
       {
-        relations.map(([initialCategory, urls]) => (
+        relations.map(([categoryName, itemsUrls]) => (
           <div
             className="items-relations__item"
             key={crypto.randomUUID()}
           >
-            <h2 className="items-relations__title">Related {initialCategory}</h2>
+            <h2 className="items-relations__title">Related {categoryName}</h2>
 
-            <RelationsList
-              urls={urls}
-              initialCategory={initialCategory}
-            />
+            <RelationsList itemsUrls={itemsUrls} />
 
           </div>
         ))

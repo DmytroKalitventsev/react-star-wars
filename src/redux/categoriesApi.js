@@ -4,7 +4,7 @@ export const categoriesApi = createApi({
   reducerPath: 'categoriesApi',
 
   baseQuery: fetchBaseQuery({ baseUrl: 'https://swapi.dev/api' }),
-  tagTypes: ['CategoryItems', 'ItemDescriptions'],
+  tagTypes: ['CategoryItems', 'ItemDescriptions', 'ItemsDescriptions'],
   endpoints: (build) => ({
     getCategories: build.query({
       query: () => '/',
@@ -22,4 +22,8 @@ export const categoriesApi = createApi({
   }),
 });
 
-export const { useGetCategoriesQuery, useGetCategoryItemsQuery, useGetItemDescriptionsQuery } = categoriesApi;
+export const {
+  useGetCategoriesQuery,
+  useGetCategoryItemsQuery,
+  useGetItemDescriptionsQuery,
+} = categoriesApi;

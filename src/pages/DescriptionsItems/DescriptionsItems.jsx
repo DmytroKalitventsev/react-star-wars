@@ -7,10 +7,11 @@ import { ItemCharacteristics, ItemsRelations } from '../../components';
 
 export const DescriptionsItems = () => {
   const { state } = useLocation();
+  
   const itemId = state?.itemId;
   const currentCategory = state?.categoryName;
-
   const [categoryName] = useNameReplace(currentCategory, 'characters', 'people');
+
   const { data: itemDescriptions, error, isFetching } = useGetItemDescriptionsQuery({ categoryName, itemId });
 
   return (
