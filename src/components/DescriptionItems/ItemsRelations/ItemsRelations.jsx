@@ -1,7 +1,7 @@
 import './itemsRelations.scss';
 import { RelationsList } from '../RelationsList/RelationsList';
 
-export const ItemsRelations = ({ data }) => {
+export const ItemsRelations = ({ itemDescriptions }) => {
   const includesData = [
     'films',
     'species',
@@ -13,16 +13,22 @@ export const ItemsRelations = ({ data }) => {
     'pilots',
     'residents',
   ];
-  const relations = Object.entries(data).filter(([key]) => includesData.includes(key));
+  const relations = itemDescriptions && Object.entries(itemDescriptions).filter(([key]) => includesData.includes(key));
 
   return (
     <div className='items-relations'>
       {
-        relations.map(([category, links]) => (
-          <div className="items-relations__item" key={crypto.randomUUID()}>
-            <h2 className="items-relations__title">Related {category}</h2>
+        relations.map(([initialCategory, urls]) => (
+          <div
+            className="items-relations__item"
+            key={crypto.randomUUID()}
+          >
+            <h2 className="items-relations__title">Related {initialCategory}</h2>
 
-            <RelationsList links={links} category={category} />
+            <RelationsList
+              urls={urls}
+              initialCategory={initialCategory}
+            />
 
           </div>
         ))

@@ -1,7 +1,7 @@
 import './characteristicsPoints.scss';
 import { CharacteristicsList } from '../CharacteristicsList/CharacteristicsList';
 
-export const CharacteristicsPoints = ({ data }) => {
+export const CharacteristicsPoints = ({ itemDescriptions, itemName }) => {
   const exclusionData = [
     'name',
     'title',
@@ -21,15 +21,15 @@ export const CharacteristicsPoints = ({ data }) => {
     'edited',
     'url'
   ];
-  const characteristics = Object.entries(data).filter(([key]) => !exclusionData.includes(key));
-  
+  const characteristics = itemDescriptions && Object.entries(itemDescriptions).filter(([descriptionName]) => !exclusionData.includes(descriptionName));
+
   return (
     <div className="characteristics-points">
-      <h2 className="characteristics-points__name">{data.name ? data.name : data.title}</h2>
+      <h2 className="characteristics-points__name">{itemName}</h2>
 
       <CharacteristicsList
         characteristics={characteristics}
-        urlHomeWorld={data.homeworld}
+        urlHomeWorld={itemDescriptions?.homeworld}
       />
 
     </div>

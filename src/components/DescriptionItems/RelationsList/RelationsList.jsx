@@ -1,23 +1,23 @@
 import './relationsList.scss';
-import { ErrorTextInformer, Loading } from '../../../utils/hoc';
 import { usePromiseAll } from '../../../utils/hooks';
+import { ErrorTextInformer, Loading } from '../../../utils/hoc';
 import { ItemRelation } from '../ItemRelation/ItemRelation';
 
-export const RelationsList = ({ links, category }) => {
-  const { data, loading, isValidApi } = usePromiseAll(links);
+export const RelationsList = ({ urls, initialCategory }) => {
+  const { data: itemDescriptions, loading, isValidApi } = usePromiseAll(urls);
 
   return (
     <Loading data={loading}>
       <ErrorTextInformer isValidApi={isValidApi}>
         {
-          data.length
+          itemDescriptions.length
             ?
             <div className='relations-list'>
               {
-                data.map(relation => (
+                itemDescriptions?.map(relation => (
                   <ItemRelation
                     relation={relation}
-                    category={category}
+                    initialCategory={initialCategory}
                     key={crypto.randomUUID()}
                   />
                 ))

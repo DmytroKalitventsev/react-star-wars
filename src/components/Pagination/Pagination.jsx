@@ -1,11 +1,11 @@
 import './pagination.scss';
 import { usePaginationRange } from '../../utils/hooks';
 
-export const Pagination = ({ countItems, currentPage, setCurrentPage }) => {
-  const totalPage = Math.ceil(countItems / 10);
+export const Pagination = ({ itemsCount, currentPage, setCurrentPage }) => {
+  const totalPages = Math.ceil(itemsCount / 10);
   const siblings = 1;
 
-  const array = usePaginationRange(totalPage, currentPage, siblings);
+  const paginationRange = usePaginationRange(totalPages, currentPage, siblings);
 
   const handlePageChange = (value) => {
     if (value === '...') return;
@@ -14,7 +14,7 @@ export const Pagination = ({ countItems, currentPage, setCurrentPage }) => {
       setCurrentPage(prev => prev - 1);
     }
 
-    if (value === 'next' && currentPage !== totalPage) {
+    if (value === 'next' && currentPage !== totalPages) {
       setCurrentPage(prev => prev + 1);
     }
 
@@ -29,7 +29,7 @@ export const Pagination = ({ countItems, currentPage, setCurrentPage }) => {
         <span className='pagination__link' href="#" onClick={() => handlePageChange('prev')}>&#10094;</span>
       </li>
       {
-        array.map(value => (
+        paginationRange.map(value => (
           <li className='pagination__item' key={crypto.randomUUID()}>
             <span
               className={`pagination__link

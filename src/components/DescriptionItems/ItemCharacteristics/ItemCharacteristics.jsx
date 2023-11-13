@@ -1,18 +1,23 @@
 import './itemCharacteristics.scss';
 import { CharacteristicsPoints } from '../CharacteristicsPoints/CharacteristicsPoints';
-import { ImageItems } from '../../ImageItems/ImageItems';
+import { ImageValid } from '../../ImageValid/ImageValid';
 
-export const ItemCharacteristics = ({ data, idItem, category }) => {
+export const ItemCharacteristics = ({ itemDescriptions, itemId, currentCategory }) => {
+  const itemName = itemDescriptions?.name ?? itemDescriptions?.title;
+
   return (
     <div className='item-characteristics'>
 
-      <ImageItems
-        name={data.name ? data.name : data.title}
-        category={category}
-        idItem={idItem}
+      <ImageValid
+        itemName={itemName}
+        categoryName={currentCategory}
+        itemId={itemId}
       />
 
-      <CharacteristicsPoints data={data} />
+      <CharacteristicsPoints
+        itemDescriptions={itemDescriptions}
+        itemName={itemName}
+      />
 
     </div>
   );

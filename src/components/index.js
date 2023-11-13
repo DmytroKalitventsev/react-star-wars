@@ -4,7 +4,7 @@ export * from './Pagination/Pagination';
 export * from './Loader/Loader';
 export * from './EllipsisLoader/EllipsisLoader';
 export * from './ErrorContent/ErrorContent';
-export * from './ImageItems/ImageItems';
+export * from './ImageValid/ImageValid';
 export * from './MenuCard/MenuCard';
 export * from './CategoryItem/CategoryItem';
 export * from './FollowMe/FollowMe';

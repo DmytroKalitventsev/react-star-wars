@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useValidationImg = (srcImage) => {
+export const useImageValidation = (srcImage) => {
   const [isValidSrc, setIsValidSrc] = useState(srcImage);
   const [isError, setIsError] = useState(false);
 

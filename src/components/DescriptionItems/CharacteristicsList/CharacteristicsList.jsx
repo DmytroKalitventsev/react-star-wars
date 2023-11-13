@@ -7,10 +7,10 @@ export const CharacteristicsList = ({ characteristics, urlHomeWorld }) => {
   return (
     <div className='characteristics-list'>
       {
-        characteristics.map(([title, value]) => (
+        characteristics.map(([itemName, itemValue]) => (
           <CharacteristicsPoint
-            title={title}
-            value={value}
+            itemName={itemName}
+            itemValue={itemValue}
             key={crypto.randomUUID()}
           />
         ))

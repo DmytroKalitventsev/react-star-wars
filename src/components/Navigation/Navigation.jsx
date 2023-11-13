@@ -4,8 +4,9 @@ import { RenderElement } from "../../utils/hoc";
 
 export const Navigation = () => {
   const { state } = useLocation();
-  const category = state?.category;
-  const name = state?.titleText;
+
+  const currentCategory = state?.categoryName;
+  const itemName = state?.itemName;
 
   return (
     <nav className="navigation">
@@ -14,14 +15,14 @@ export const Navigation = () => {
           <Link to='/'>Home</Link>
         </li>
 
-        <RenderElement data={category}>
+        <RenderElement data={currentCategory}>
           <li className="navigation__item">
-            <Link to={`/${category}`} state={{ category }}>{category}</Link>
+            <Link to={`/${currentCategory}`} state={{ categoryName: currentCategory }}>{currentCategory}</Link>
           </li>
         </RenderElement>
 
-        <RenderElement data={name}>
-          <li className="navigation__item navigation__item_cursor">{name}</li>
+        <RenderElement data={itemName}>
+          <li className="navigation__item navigation__item_cursor">{itemName}</li>
         </RenderElement>
       </ul>
     </nav>

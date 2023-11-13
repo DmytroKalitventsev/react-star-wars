@@ -1,1 +1,0 @@
-export const imageAPI = 'https://starwars-visualguide.com/assets/img';

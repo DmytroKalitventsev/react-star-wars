@@ -1,31 +1,31 @@
 import _ from "lodash";
 
-export const usePaginationRange = (totalPage, currentPage, siblings) => {
+export const usePaginationRange = (totalPages, currentPage, siblings) => {
   let totalPageNoInArray = 7 + siblings;
 
-  if (totalPageNoInArray >= totalPage) return _.range(1, totalPage + 1);
+  if (totalPageNoInArray >= totalPages) return _.range(1, totalPages + 1);
 
   let leftSiblingsIndex = Math.max(currentPage - siblings, 1);
-  let rightSiblingsIndex = Math.min(currentPage + siblings, totalPage);
+  let rightSiblingsIndex = Math.min(currentPage + siblings, totalPages);
 
   let showLeftDots = leftSiblingsIndex > 2;
-  let showRightDots = rightSiblingsIndex < totalPage - 2;
+  let showRightDots = rightSiblingsIndex < totalPages - 2;
 
   if (!showLeftDots && showRightDots) {
     let leftItemsCount = 3 + 2 * siblings;
     let leftRange = _.range(1, leftItemsCount + 1);
 
-    return [...leftRange, '...', totalPage];
+    return [...leftRange, '...', totalPages];
   }
 
   if (showLeftDots && !showRightDots) {
     let rightItemsCount = 3 + 2 * siblings;
-    let rightRange = _.range(totalPage - rightItemsCount + 1, totalPage + 1);
+    let rightRange = _.range(totalPages - rightItemsCount + 1, totalPages + 1);
 
     return [1, '...', ...rightRange];
   }
 
   let middleRange = _.range(leftSiblingsIndex, rightSiblingsIndex + 1);
 
-  return [1, '...', ...middleRange, '...', totalPage];
+  return [1, '...', ...middleRange, '...', totalPages];
 }
