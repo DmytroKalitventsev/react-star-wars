@@ -8,7 +8,7 @@ import { ImageValid } from '../../ImageValid/ImageValid';
 export const ItemRelation = ({ itemUrl }) => {
   const { category: categoryName, id: itemId } = useGetParamsFromUrl(itemUrl);
 
-  const { data: itemDescriptions, error, isFetching } = useGetItemDescriptionsQuery({ categoryName: '234', itemId });
+  const { data: itemDescriptions, error, isFetching } = useGetItemDescriptionsQuery({ categoryName, itemId });
 
   const itemName = itemDescriptions?.name ?? itemDescriptions?.title;
 
