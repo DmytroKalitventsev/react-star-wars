@@ -10,18 +10,17 @@ export const CharacteristicsPointUrl = ({ urlHomeWorld }) => {
   const itemName = itemDescriptions?.name;
 
   return (
-    <SmallLoading data={isFetching}>
-      {/* <ErrorTextInformer isValidApi={isValidApi} title={itemName}>
-        
-      </ErrorTextInformer> */}
-      <Link
-        className="characteristics-point lightsaber"
-        to={`/${categoryName}/${itemName?.toLowerCase().replace(/\s/g, '-')}`}
-        state={{ itemId, categoryName, itemName }}
-      >
-        <div className="characteristics-point__title">Homeworld:</div>
-        <div className="characteristics-point__info ">{itemName}</div>
-      </Link>
-    </SmallLoading>
+    <ErrorTextInformer error={error} itemName={itemName}>
+      <SmallLoading data={isFetching}>
+        <Link
+          className="characteristics-point lightsaber"
+          to={`/${categoryName}/${itemName?.toLowerCase().replace(/\s/g, '-')}`}
+          state={{ itemId, categoryName, itemName }}
+        >
+          <div className="characteristics-point__title">Homeworld:</div>
+          <div className="characteristics-point__info ">{itemName}</div>
+        </Link>
+      </SmallLoading>
+    </ErrorTextInformer>
   );
 };

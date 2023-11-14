@@ -7,7 +7,7 @@ import { ItemCharacteristics, ItemsRelations } from '../../components';
 
 export const DescriptionsItems = () => {
   const { state } = useLocation();
-  
+
   const itemId = state?.itemId;
   const currentCategory = state?.categoryName;
   const [categoryName] = useNameReplace(currentCategory, 'characters', 'people');
@@ -15,21 +15,20 @@ export const DescriptionsItems = () => {
   const { data: itemDescriptions, error, isFetching } = useGetItemDescriptionsQuery({ categoryName, itemId });
 
   return (
-    <Loading data={isFetching}>
-      <div className='descriptions-items'>
+    <ErrorProcessing error={error}>
+      <Loading data={isFetching}>
+        <div className='descriptions-items'>
 
-        <ItemCharacteristics
-          itemDescriptions={itemDescriptions}
-          itemId={itemId}
-          currentCategory={currentCategory}
-        />
+          <ItemCharacteristics
+            itemDescriptions={itemDescriptions}
+            itemId={itemId}
+            currentCategory={currentCategory}
+          />
 
-        <ItemsRelations itemDescriptions={itemDescriptions} />
+          <ItemsRelations itemDescriptions={itemDescriptions} />
 
-      </div>
-    </Loading>
-    // <ErrorProcessing isValidApi={isValidApi}>
-
-    // </ErrorProcessing>
+        </div>
+      </Loading>
+    </ErrorProcessing>
   );
 };

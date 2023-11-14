@@ -1,6 +1,6 @@
 import './homeMenu.scss';
 import { useGetCategoriesQuery } from '../../redux';
-import { Loading } from '../../utils/hoc';
+import { ErrorProcessing, Loading } from '../../utils/hoc';
 import { MenuCard } from "../../components";
 
 export const HomeMenu = () => {
@@ -8,17 +8,19 @@ export const HomeMenu = () => {
   const categories = data && Object.entries(data);
 
   return (
-    <Loading data={isLoading}>
-      <div className="home-menu">
-        {
-          categories?.map(([itemName]) =>
-            <MenuCard
-              key={crypto.randomUUID()}
-              itemName={itemName}
-            />
-          )
-        }
-      </div>
-    </Loading>
+    <ErrorProcessing error={error}>
+      <Loading data={isLoading}>
+        <div className="home-menu">
+          {
+            categories?.map(([itemName]) =>
+              <MenuCard
+                key={crypto.randomUUID()}
+                itemName={itemName}
+              />
+            )
+          }
+        </div>
+      </Loading>
+    </ErrorProcessing>
   );
 };

@@ -1,12 +1,12 @@
 import { ErrorPage } from '../../pages';
 
-export const ErrorProcessing = ({ children, isValidApi }) => {
+export const ErrorProcessing = ({ children, error }) => {
   return (
     <>
       {
-        isValidApi.ok
-          ? children
-          : <ErrorPage isValidApi={isValidApi} />
+        error
+          ? <ErrorPage error={error} />
+          : children
       }
     </>
   );

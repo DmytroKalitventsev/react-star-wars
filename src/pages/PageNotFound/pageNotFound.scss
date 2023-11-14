@@ -1,4 +1,9 @@
-.error-content {
+.not-page {
+  display: flex;
+  height: 100%;
+}
+
+.not-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,6 +33,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
   }
 
   &__url {

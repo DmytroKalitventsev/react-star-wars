@@ -1,5 +1,5 @@
 import { Route, Routes, HashRouter } from "react-router-dom";
-import { BasicStructure, HomeMenu, ErrorPage, CategoryItems, DescriptionsItems } from "../pages";
+import { BasicStructure, HomeMenu, PageNotFound, CategoryItems, DescriptionsItems } from "../pages";
 
 export const Routers = () => {
   return (
@@ -10,7 +10,7 @@ export const Routers = () => {
           <Route path=':category' element={<CategoryItems />} />
           <Route path=":category/:descriptions" element={<DescriptionsItems />} />
         </Route>
-        <Route path='*' element={<ErrorPage />} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </HashRouter>
   );

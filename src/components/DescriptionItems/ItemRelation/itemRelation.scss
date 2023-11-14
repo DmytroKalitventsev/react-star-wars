@@ -15,6 +15,22 @@
     background-color: #2d2e30;
   }
 
+  &_error {
+    &:hover {
+      background-color: #6b0e0f;
+      cursor: not-allowed;
+    }
+  }
+
+  &__img {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #000;
+  }
+
   &__name {
     text-align: center;
     font-size: 14px;

@@ -15,27 +15,26 @@ export const CategoryItems = () => {
   const { data: categoryItems, error, isFetching } = useGetCategoryItemsQuery({ categoryName, currentPage });
 
   return (
-    <Loading data={isFetching}>
-      <div className="category-items">
-        {
-          categoryItems?.results?.map(itemData =>
-            <CategoryItem
-              key={crypto.randomUUID()}
-              itemData={itemData}
-            />
-          )
-        }
-      </div>
+    <ErrorProcessing error={error}>
+      <Loading data={isFetching}>
+        <div className="category-items">
+          {
+            categoryItems?.results?.map(itemData =>
+              <CategoryItem
+                key={crypto.randomUUID()}
+                itemData={itemData}
+              />
+            )
+          }
+        </div>
 
-      <Pagination
-        itemsCount={categoryItems?.count}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
-      {/* <ErrorProcessing isValidApi={error}>
-        
+        <Pagination
+          itemsCount={categoryItems?.count}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
 
-      </ErrorProcessing> */}
-    </Loading>
+      </Loading>
+    </ErrorProcessing>
   );
 };
